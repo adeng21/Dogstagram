@@ -2,5 +2,13 @@
 
 <% @posts.each do |post| %>
   <%= image_tag post.image.url %>
+  <%= pluralize(post.barks.count, "Bark")%>
+  <% if user_signed_in?%>
+    <% if post.has_bark_from?(current_user)%>
+      <%= button_to "Remove Bark", post_bark_path(post, post.bark_from(current_user)), method: :delete %>
+    <%else%>
+    <%= button_to "Bark", post_barks_path(post), method: :post %>
+    <%end%>
+  <%end%>
   <p> <%= post.description%> </p>
 <%end%>

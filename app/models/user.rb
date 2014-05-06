@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   has_many :posts,
     dependent: :destroy,
     inverse_of: :user
+
+  has_many :barks,
+    dependent: :destroy,
+    inverse_of: :user
 end
