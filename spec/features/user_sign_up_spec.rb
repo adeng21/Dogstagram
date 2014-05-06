@@ -16,7 +16,7 @@ feature 'user signs up', %q{
     fill_in 'Email', with: 'bark@bark.com'
     fill_in 'Password', with: 'bark1234'
     fill_in 'Password confirmation', with: 'bark1234'
-    click_on 'Sign Up'
+    click_on 'Sign up'
 
     expect(page).to have_content 'Bark! You have signed up successfully.'
   end
@@ -24,7 +24,7 @@ feature 'user signs up', %q{
   scenario 'user signs up without required information' do
     visit new_user_registration_path
 
-    click_on 'Sign Up'
+    click_on 'Sign up'
 
     expect(page).to have_content "Email can't be blank"
     expect(page).to have_content "Password can't be blank"
