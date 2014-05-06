@@ -9,4 +9,9 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Dogstagram::Application.config.secret_key_base = '3d5268ba12a82ab990ae2d08f98a9830fd6761a912cb3fbf9d69f35fac9ecfbbf9849a8354a1a5e628fb6ec4b53c621bfd47ffaf0b7aeeeb60b2c32f9fec308a'
+
+if Rails.env.development? || Rails.env.test?
+  Dogstagram::Application.config.secret_key_base = ('x' * 128)
+else
+  Dogstagram::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+end
