@@ -1,9 +1,9 @@
 Dogstagram::Application.routes.draw do
   devise_for :users
 
-  root 'pages#index'
+  root 'posts#index'
 
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:index, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

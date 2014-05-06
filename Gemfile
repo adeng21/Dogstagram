@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'simple_form'
+gem 'carrierwave'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda'
   gem 'quiet_assets'
+  gem 'orderly'
 end
 
 # Use ActiveModel has_secure_password
